@@ -10,6 +10,8 @@ RUN gem install ascii_binder
 WORKDIR /var/tmp
 ADD docs /var/tmp
 WORKDIR /var/tmp/docs
+RUN pwd
+RUN ls -lR
 RUN asciibinder build
 RUN mv /var/tmp/* /var/www/htdocs/
 CHOWN -r apache /var/www/htdocs
