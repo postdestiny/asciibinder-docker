@@ -11,9 +11,9 @@ COPY . /var/tmp/docs
 COPY httpd.conf /etc/httpd/httpd.conf
 #WORKDIR /var/tmp/docs
 #RUN ls -lR /var/tmp
-#RUN asciibinder build /var/tmp/docs
-#RUN mv /var/tmp/docs/* /var/www/htdocs/
-#CHOWN -r apache /var/www/htdocs
+RUN asciibinder build /var/tmp/docs
+RUN mv /var/tmp/docs/_preview/ascii_binder/latest/* /var/www/htdocs/
+RUN chown -r apache /var/www/htdocs
 
 EXPOSE 8080
 
