@@ -10,9 +10,9 @@ RUN asciibinder create /var/tmp/docs
 #COPY docs /var/tmp/docs
 #WORKDIR /var/tmp/docs
 #RUN ls -lR /var/tmp
-RUN asciibinder build /var/tmp/docs
-RUN mv /var/tmp/docs/* /var/www/htdocs/
-CHOWN -r apache /var/www/htdocs
+#RUN asciibinder build /var/tmp/docs
+#RUN mv /var/tmp/docs/* /var/www/htdocs/
+#CHOWN -r apache /var/www/htdocs
 
 USER apache
 
