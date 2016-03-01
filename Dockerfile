@@ -16,7 +16,7 @@ RUN asciibinder create /var/tmp/docs
 
 USER apache
 
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT [ "/usr/sbin/httpd" ]
 CMD [ "-D", "FOREGROUND" ]
