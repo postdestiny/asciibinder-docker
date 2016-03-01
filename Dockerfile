@@ -8,11 +8,9 @@ RUN yum -y install git httpd ; yum clean all
 RUN gem install ascii_binder
 
 COPY docs /var/tmp/docs
-WORKDIR /var/tmp/
-RUN ls -lR
-RUN pwd
+WORKDIR /var/tmp/docs
 RUN asciibinder build
-RUN mv /var/tmp/* /var/www/htdocs/
+RUN mv /var/tmp/docs/* /var/www/htdocs/
 CHOWN -r apache /var/www/htdocs
 
 USER apache
