@@ -11,13 +11,13 @@ WORKDIR /var/tmp
 CMD git clone https://github.com/postdestiny/asciibinder-docker.git
 #COPY . /var/tmp/docs
 #COPY .git /var/tmp/docs/
-COPY httpd.conf /etc/httpd/httpd.conf
+#COPY httpd.conf /etc/httpd/httpd.conf
 #RUN ls -lR /var/tmp
-RUN asciibinder build /var/tmp/asciibinder-docker
-RUN mv /var/tmp/asciibinder-docker/_preview/ascii_binder/latest/* /var/www/htdocs/
-RUN chown -r apache /var/www/htdocs
+#RUN asciibinder build /var/tmp/asciibinder-docker
+#RUN mv /var/tmp/asciibinder-docker/_preview/ascii_binder/latest/* /var/www/htdocs/
+#RUN chown -r apache /var/www/htdocs
 
-EXPOSE 8080
+#EXPOSE 8080
 
 #USER apache
 
