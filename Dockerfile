@@ -14,9 +14,10 @@ RUN asciibinder create /var/tmp/docs
 #RUN mv /var/tmp/docs/* /var/www/htdocs/
 #CHOWN -r apache /var/www/htdocs
 
-USER apache
-
 EXPOSE 80
 
-ENTRYPOINT [ "/usr/sbin/httpd" ]
-CMD [ "-D", "FOREGROUND" ]
+USER apache
+
+CMD /bin/sh -c "while true; do echo hello world; sleep 1; done"
+#ENTRYPOINT [ "/usr/sbin/httpd" ]
+#CMD [ "-D", "FOREGROUND" ]
