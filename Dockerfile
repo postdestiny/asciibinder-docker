@@ -8,6 +8,7 @@ RUN yum -y install git httpd ; yum clean all
 RUN gem install ascii_binder
 #RUN asciibinder create /var/tmp/docs
 WORKDIR /var/tmp
+CMD cd /var/tmp
 CMD git clone https://github.com/postdestiny/asciibinder-docker.git
 #COPY . /var/tmp/docs
 #COPY .git /var/tmp/docs/
