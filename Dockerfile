@@ -8,9 +8,12 @@ RUN yum -y install git httpd ; yum clean all
 RUN gem install ascii_binder
 
 CWD /var/tmp
-RUN git clone https://github.com/openshift/openshift-docs.git
+ADD docs /var/tmp
 RUN asciibinder build
-RUN mv /var/tmp/openshift-docs
+RUN mv /var/tmp/* /var/www/htdocs/
+CHOWN -r apache /var/www/htdocs
+
+USER apache
 
 EXPOSE 8080
 
