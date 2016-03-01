@@ -7,9 +7,9 @@ RUN yum -y install gcc-c++ ; yum clean all
 RUN yum -y install git httpd ; yum clean all
 RUN gem install ascii_binder
 
-COPY docs /var/tmp/
+COPY docs /var/tmp/docs
+WORKDIR /var/tmp/
 RUN ls -lR
-WORKDIR /var/tmp/docs
 RUN pwd
 RUN asciibinder build
 RUN mv /var/tmp/* /var/www/htdocs/
