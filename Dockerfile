@@ -7,7 +7,7 @@ RUN yum -y install java ruby ruby-devel \
                    git httpd ; \
                    yum clean all
 RUN gem install ascii_binder
-WORKDIR /var/tmp
+WORKDIR /var/www/html
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 
 RUN chown -R apache /var/www/html /var/log/httpd /run/httpd
