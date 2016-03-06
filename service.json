@@ -1,0 +1,23 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "asciibinder-docker"
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 8080,
+        "targetPort": 8080,
+        "nodePort": 0
+      }
+    ],
+    "selector": {
+      "app": "asciibinder-docker"
+    },
+    "portalIP": "",
+    "type": "ClusterIP",
+    "sessionAffinity": "None"
+  }
+}

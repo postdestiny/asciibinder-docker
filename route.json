@@ -1,0 +1,14 @@
+{
+  "kind": "Route",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "asciibinder-docker"
+  },
+  "spec": {
+    "host": "asciibinder-docker.apps.10.2.2.2.xip.io",
+    "to": {
+      "kind": "Service",
+      "name": "asciibinder-docker"
+    }
+  }
+}
