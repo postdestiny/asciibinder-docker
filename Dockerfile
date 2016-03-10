@@ -22,4 +22,5 @@ CMD [ "-D", "FOREGROUND" ]
 
 RUN cd /var/www/html
 RUN git clone https://github.com/postdestiny/asciibinder-docs.git && cd asciibinder-docs && git checkout 173d900
-RUN asciibinder build 
+RUN asciibinder build /var/www/html/asciibinder-docs
+RUN cp -r /var/www/html/asciibinder-docs/_preview/* /var/www/html
