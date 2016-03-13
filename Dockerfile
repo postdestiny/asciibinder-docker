@@ -10,11 +10,12 @@ RUN gem install ascii_binder
 WORKDIR /var/www/html
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 
-RUN chown -R apache /var/www/html /var/log/httpd /run/httpd
+RUN chown -R apache /var/www/html /var/log/httpd 
+RUN chmod 755 /run/httpd
 
 EXPOSE 8080
 
-USER apache
+#USER apache
 
 CMD /bin/sh -c "while true; do echo hello world; sleep 1; done"
 #ENTRYPOINT [ "/usr/sbin/httpd" ]
