@@ -10,7 +10,7 @@ RUN gem install ascii_binder
 WORKDIR /var/www/html
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 
-#RUN chown -R apache /var/www/html /var/log/httpd 
+RUN chown -R apache:root /var/www/html /var/log/httpd 
 RUN chmod 775 /run/httpd
 RUN chmod 770 /var/log/httpd
 EXPOSE 8080
