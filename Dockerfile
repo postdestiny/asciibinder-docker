@@ -16,9 +16,10 @@ EXPOSE 8080
 
 USER apache
 
-#CMD /bin/sh -c "while true; do echo hello world; sleep 1; done"
-ENTRYPOINT [ "/usr/sbin/httpd" ]
-CMD [ "-D", "FOREGROUND" ]
+CMD /bin/sh -c "while true; do echo hello world; sleep 1; done"
+#ENTRYPOINT [ "/usr/sbin/httpd" ]
+#CMD [ "-D", "FOREGROUND" ]
+
 
 RUN cd /var/www/html
 RUN git clone https://github.com/postdestiny/asciibinder-docs.git && cd asciibinder-docs # && git checkout  0ed4f92
