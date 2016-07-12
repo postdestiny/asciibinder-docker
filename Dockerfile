@@ -21,7 +21,6 @@ EXPOSE 8080
 ENTRYPOINT [ "/usr/sbin/httpd" ]
 CMD [ "-D", "FOREGROUND" ]
 
-
 RUN cd /var/www/html
 RUN git clone https://github.com/postdestiny/asciibinder-docs.git && cd asciibinder-docs # Version 1
 RUN asciibinder build /var/www/html/asciibinder-docs
